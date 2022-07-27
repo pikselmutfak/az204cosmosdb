@@ -14,10 +14,6 @@ const UserSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
   }
 });
 
@@ -26,7 +22,7 @@ UserSchema.methods.toJSON = function () {
 
   const oObject = o.toObject();
 
-  return _.pick(oObject, ['_id', 'firstName', 'lastName', 'age', 'createdAt', 'updatedAt']);
+  return _.pick(oObject, ['_id', 'firstName', 'lastName', 'age', 'createdAt']);
 };
 
 const User = mongoose.model('User', UserSchema);
